@@ -1,0 +1,56 @@
+<!doctype html>
+<html> 
+ <head> 
+  <title>RGB Color Generator by kishan</title> 
+  <style>
+     #box{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 10px;
+  box-shadow: 2px 2px 15px rgba(0,0,0,0.20),
+              -2px -2px 15px rgba(0,0,0,0.20);
+  border-top: 25px solid #000;
+  height: 300px;
+  width: 250px;
+  padding: 1rem;
+  display: flex ;
+  flex-direction: column;
+  align-items: center;
+}
+button{
+  border: none;
+  padding: .2rem 1rem;
+  border-radius: 5px;
+}
+button:active{
+  background: lightblue;
+}
+
+#color{
+  height: 70%;
+  width: 100%;
+  border-radius: 10px;
+  background: rgb(164,71,116);
+}
+ </style> 
+ </head> 
+ <body> 
+  <div id="box"> <button onclick="generateColor()">Generate Color</button> 
+   <p id="value">rgb(164,71,116)</p> 
+   <div id="color" onclick="generateColor()"></div> 
+  </div> 
+  <script>
+    
+  function generateColor() {
+   var r = Math.floor(Math.random() * 256);
+   var g = Math.floor(Math.random() * 256);
+   var b = Math.floor(Math.random() * 256);
+   var rgb = "rgb(" + r + "," + g + "," + b + ")";
+   document.getElementById("color").style.backgroundColor = rgb;
+   document.getElementById("value").innerHTML = rgb;
+   }
+ </script> 
+ </body>
+</html>
